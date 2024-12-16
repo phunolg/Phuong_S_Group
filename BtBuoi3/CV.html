@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CV someone</title>
+    <style>
+    body{
+        padding: 0;
+        margin: 0;
+    }
+    .ContainerTong {
+        font-family: 'Inter', sans-serif;
+        margin:10px auto;
+        max-width: 700px;
+    }
+    .Header {
+        display: flex;
+        justify-content: space-between;
+        padding: 30px 14px;
+        position: fixed;
+        max-width:700px;
+        letter-spacing: 2px;
+        top: 0;
+        width: 100%;
+        z-index: 999;
+        background-color: #FFF;
+    }
+    .jason {
+        max-width:700px; 
+        font-weight: 500; 
+        font-size: 10.5px;
+        font-style: normal;
+    }
+    .logo1 {
+        display: flex;
+        align-items: center;
+    }
+    .logo1 img {
+        width: 25px;
+        height: 25px;
+        margin-right: 10px;
+    }
+    .logo2 {
+        display: flex;
+        gap: 8px;
+    }
+    /* .logo2:hover {
+        background-color: #F26464;
+        color: #FFF;
+    } */
+    .logo2 img {
+        width: 14px;
+        height: 14px;
+        background-color: #F26464;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-size: 16px;
+        border-radius: 100%;
+        color: #FFF;
+    }
+    .Experience {
+        color: rgba(255, 68, 0, 0.637);
+        font-weight: 700;
+    }
+    .nav {
+        margin-left: -17px;
+        padding: 0;
+    }
+    .nav li {
+        font-size: 20px;
+        display: inline-block;
+        padding:20px;
+    }
+    .menu {
+        width: 35%;
+        float: left;
+        padding: 13px;
+        margin-top: 80px;
+    }
+    .main {
+        width: 55%;
+        float: right;
+        margin-top: 80px;
+    }
+    .Header1 {
+        font-size: 9px;
+        font-weight: 700;
+        border-bottom: 2px solid rgba(201, 92, 52, 0.852);
+        display: inline-block;
+        margin-top: 15px;
+        margin-left: 15px;
+        line-height: 20px;
+        letter-spacing: 0.5px;
+
+    }
+    .ContainerOfSkill {
+        display: flex;
+    
+    }
+    .Header1_1 {
+        font-size: 9px;
+        font-weight: 700;
+        border-bottom: 2px solid rgba(201, 92, 52, 0.852);
+        display: inline-block;
+        margin-top: 50px;
+        margin-bottom: 7px;
+        margin-left: 15px;
+        line-height: 20px;
+        letter-spacing: 0.5px;
+
+    }
+    .Header1_2 {
+        font-size: 9px;
+        font-weight: 700;
+        border-bottom: 2px solid rgba(201, 92, 52, 0.852);
+        display: inline-block;
+        margin-top: 50px;
+        margin-bottom: 7px;
+        margin-left: 10%;
+        line-height: 20px;
+        letter-spacing: 0.5px;
+
+    }
+    .download {
+        text-align: center;
+        line-height: 3px;
+        font-weight: 700;
+        font-size: 7px; 
+        color: rgba(255, 68, 0, 0.785); 
+        padding:13px; 
+        margin: 10px;
+        letter-spacing: 2px;
+
+        border-style: solid; 
+        border-color: rgba(234, 65, 4, 0.856); 
+        border-radius: 30px; 
+        border-width: 1.5px; 
+        display: inline-block;
+        width: 120px;
+        margin-left: 40%;
+    }
+    .download:hover {
+        background-color: #F26464;
+        color: #FFF;
+    }
+    .HiThere {
+        font-size: 10px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        margin-top: 30px;
+    }
+    .Para1 {
+        font-size: 13px;
+        margin-top: 8px;
+        margin-left: 15px;
+        color: rgba(18, 12, 12, 0.537);
+        line-height: 22px;
+        margin-bottom: 30px;
+        letter-spacing: 0.5px;
+
+    }
+    .skill {
+        max-width: 300px;
+        margin-left: 15px;
+        padding: 0;
+    }
+    .skill li {
+        display: inline-block;
+        border: 1px solid #ddd;
+        border-radius: 14px;
+        padding: 6px 13px;
+        font-size: 9.5px;
+        margin: 3px;
+    }
+    .skill1 {
+        max-width: 330px;
+        margin-left: 10%;
+        padding: 0;
+    }
+    .skill1 li {
+        display: inline-block;
+        border: 1px solid #ddd;
+        border-radius: 14px;
+        padding: 6px 13px;
+        font-size: 9.5px;
+        margin: 3px;
+    }
+    .time {
+        font-size: 9.5px;
+        font-weight: bold;
+        color: #302f2f;
+        padding-left: 15px;
+        margin-top: 15px;
+        margin-bottom: 3px;
+    }
+    .ViTri {
+        font-size: 14px;
+        color: #302f2f;
+        padding-left: 15px;
+        margin-top: 0;
+        margin-bottom: 20px;
+    }
+    .MoTa {
+        font-size: 10px;
+        color: #666666ba;
+        padding-left: 15px;
+        max-width: 85%;
+        line-height: 15px;
+        margin-bottom: 20px;
+    }
+    .jl {
+        padding-left: 25px;
+        font-size: 10px;
+        color: #666666b9;
+        max-width: 80%;
+        line-height: 15px;
+    }
+    .jl li {
+        margin-bottom: 10px;
+    }
+    .ContainerOfWorks {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-left: 50px;
+        padding-right: 20px;
+        padding-top: 10px;
+
+        background-color: #F6F8FA; 
+        margin-top: 10px;
+        margin-bottom: 25px; 
+        margin-left: 14px;      
+    }
+    .AppName {
+        flex: 1;
+        padding-right: 20px;
+    }
+    .AppName h1 {
+        font-size: 18px;
+        font-weight: 600;
+        margin-top: 20px;
+        margin-bottom: 15px;
+        color: #000000c6;
+    }
+    .AppName p {
+        font-size: 11px;
+        line-height: 1.6;
+        color: #666;
+        margin-bottom: 10px;
+    }
+    .button {
+        display: inline-block;
+        padding: 9px 16px;
+        margin-top: 10px;
+        color: #F26464;
+        font-size: 7px;
+        font-weight: 550;
+        letter-spacing: 3px;
+        text-decoration: none;
+        border: 1.5px solid #F26464;
+        border-radius: 60px;
+        text-align: center;    
+    }
+    .b{
+        margin-bottom: 70px;   
+    }
+    .button:hover {
+        background-color: #F26464;
+        color: #FFF;
+    }
+    .image {
+        display: flex;
+        flex: 1;
+        clip-path: inset(13px 20px 0px 40px); /* trên, phải, dưới, trái */
+    }
+    .image img {
+        max-width: 90%;
+    }
+    .DivEnd {
+        font-family: 'Inter', sans-serif;
+        color: #fff;
+        background-color: #000;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        position: relative;
+        margin-top: 70px;
+        padding: 50px 0;
+        width: 100%;
+    }
+    .touch h5 {
+        font-size: 9px;
+        font-weight: 800;
+        letter-spacing: 0.5px;
+        color: #aaa;
+        margin-bottom: 10px;
+    }
+    .touch h1 {
+        font-size: 27px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+    .touch p {
+        font-size: 11px;
+        font-weight: 700;
+        margin-bottom: 20px;
+        color: #ddd;
+    }
+    .LastLign {
+        margin-top: 52px;
+        font-size: 10px;
+        color: #888787;
+    }
+
+    </style>
+</head>
+
+<body>
+<!-- <div class="display-flex" style ="gap: 30px">
+    <p>1</p>
+    đối với display flex thì có thể sử dụng các thuộc tính sau:
+    - flex-direction: row;
+    - flex-wrap: wrap; => nếu dài quá thì xuống dòng 
+    - flex-align: center; => căn giữa cho 2 đối tượng trên cùng 1 dòng nằm ở 2 phía trái phải 
+    space-evenly: căn đều các đối tượng trên 1 dòng, cách đều content và border nhiều khoảng bằng nhau
+</div> -->
+
+<!-- dùng flex-box sửa lại bài này, đặt tên, dùng ít inline lại, CHÍNH XÁC NHẤT -->
+<!-- chọn đề tài pbl -->
+    <div class ="ContainerTong">
+        <div class = "Header">
+            <div class = "logo1">
+                <a href = "#">
+                    <img src="https://via.placeholder.com/30"/>
+                </a>
+                
+                <p class = "jason">JASON STROFF</p>
+            </div>
+          
+            <div class="logo2">
+                <a href = "#">
+                    <img src="https://via.placeholder.com/30?text=FB"/>
+                </a>
+                <a href = "#">
+                    <img src="https://via.placeholder.com/30?text=TW"/>
+                </a>
+                <a href = "#">
+                    <img src="https://via.placeholder.com/30?text=IN"/>
+                </a>
+            </div>
+        </div>
+          
+        <div class = "menu">
+            <img src="https://chuphinhprofile.com/wp-content/uploads/2019/09/studio-chup-anh-cv-TP-HCM-1.jpg" alt="Logo" style="width:250px; height: 300px;">
+        </div>
+    
+        <div class = "main">
+            <p>
+                <p class = "HiThere">HI THERE</p><br>
+                <span style = "font-family: Arial, Helvetica, sans-serif; font-size: 30px; font-weight: bold;">
+                    I'm Jason Stroff <br> UI/UX DESIGNER +<br>DEVELOPER based<br>in Florida.
+                </span>
+            </p>
+            <ul  class = "nav">
+                <li class  = "Experience">6+ <br><span style = "font-size:10px; text-align:left;color: rgb(35, 34, 34);">Experience </span></li>
+                <li class  = "Experience">89 <br><span style = "font-size:10px; text-align:left; color: rgb(35, 34, 34);">Projects </span></li>
+                <li class  = "Experience">52 <br><span style = "font-size:10px; text-align:left; color: rgb(35, 34, 34);">Happy Clients </span></li>
+            </ul>
+        </div>
+        <div>
+            <p class = "Header1" >
+                ABOUT ME
+            </p>
+            <p class = "Para1">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis interdum ante a porta blandit. Quisque velit tortor, ultricies in quam ut, luctus convallis metus. Nunc vitae felis rutrum, mattis justo quis, bibendum tellus. Integer bibendum eget dolor nec venenatis. Aliquam erat volutpat. Etiam et est vitae turpis accumsan vulputate. Curabitur et vehicula nisl, eu congue dolor. Vivamus nec hendrerit mi Nulla consequat tempor.
+            </p>
+        </div>
+        <p class = "download">
+            DOWNLOAD RESUME
+        </p>
+        <div class = "ContainerOfSkill">
+            <div>
+                <p class = "Header1_1">
+                    CORE SKILLS
+                </p>
+                <ul class = "skill">
+                    <li>JavaScript</li>
+                    <li>Node.js</li>
+                    <li>Express.js</li>
+                    <li>MongoDB</li>
+                    <li>Vue.js</li>
+                    <li>React</li>
+                    <li>Sequelize</li>
+                    <li>Github</li>
+                    <li>HTML</li>
+                </ul>
+            </div>
+            <div>
+                <p class = "Header1_2">
+                    ORTHER SKILLS
+                </p>
+                <ul class = "skill1">
+                    <li>Storyblok</li>
+                    <li>PWAs</li>
+                    <li>Responsive Web Design</li>
+                    <li>React</li>
+                    <li>Vuetify</li>
+                </ul>
+            </div>
+        </div>
+    
+        <p class = "Header1_1">
+                WORK EXPERIENCE
+        </p>
+        <div class = "ContainerOfSkill">
+            <div>
+                <p class="time">2016 - Present</p>
+                <p style="color: #666; padding-left: 15px; margin-top: 5px; margin-bottom: 5px;">Matrix Media Inc</p>
+                <p class="ViTri">Full Stack Developer</p>
+                <p class="MoTa">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis sem maximus, ornare metus ut, congue enim. Sed fermentum.
+                </p>
+                <ul class="jl">
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis sem maximus, ornare metus ut.</li>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                </ul>
+            </div>
+    
+            <div>
+                <p class="time">2018 - 2019</p>
+                <p style="color: #666; padding-left: 15px;  margin-top: 5px; margin-bottom: 5px;">Lexind</p>
+                <p class="ViTri">Senior App Developer</p>
+                <p class="MoTa">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis sem maximus, ornare metus ut, congue enim. Sed fermentum.
+                </p>
+                <ul class="jl">
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis sem maximus, ornare metus ut.</li>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis sem maximus, ornare metus ut.</li>
+                </ul>
+            </div>
+        </div>
+        
+        <p class = "Header1_1">
+            LASTEST WORKS
+        </p>
+        <div class="ContainerOfWorks">
+            <div class="AppName">
+                <h1>Tripy mobile app</h1>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis sem maximus, ornare metus ut, congue enim. Sed fermentum nulla tellus, quis efficitur mauris tristique efficitur. Aliquam rhoncus sem sed ullamcorper venenatis. Aenean malesuada eu orci non sodales.
+                </p>
+                <a href="https://www.designstub.com/demos/defolio/works-setails.html" class="button b" >DETAILS</a>
+            </div>
+            <div class="image">
+                <img src="https://static.vecteezy.com/system/resources/previews/018/861/138/non_2x/pastry-colored-marketplace-mobile-app-ui-mockup-template-vector.jpg" alt="Tripy Mobile App">
+            </div>
+        </div>
+    
+        <div class="ContainerOfWorks">
+            <div class="AppName">
+                <h1>Hello mobile app</h1>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis sem maximus, ornare metus ut, congue enim. Sed fermentum nulla tellus, quis efficitur mauris tristique efficitur. Aliquam rhoncus sem sed ullamcorper venenatis. Aenean malesuada eu orci non sodales.
+                </p>
+                <a href="https://www.designstub.com/demos/defolio/works-setails.html" class="button">DETAILS</a>
+            </div>
+            <div class="image">
+                <img src="https://static.vecteezy.com/system/resources/previews/018/861/138/non_2x/pastry-colored-marketplace-mobile-app-ui-mockup-template-vector.jpg" alt="Tripy Mobile App">
+            </div>
+        </div>
+    
+        <div class="ContainerOfWorks">
+            <div class="AppName">
+                <h1>Cute cookies app</h1>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis sem maximus, ornare metus ut, congue enim. Sed fermentum nulla tellus, quis efficitur mauris tristique efficitur. Aliquam rhoncus sem sed ullamcorper venenatis. Aenean malesuada eu orci non sodales.
+                </p>
+                <a href="https://www.designstub.com/demos/defolio/works-setails.html" class="button">DETAILS</a>
+            </div>
+            <div class="image">
+                <img src="https://static.vecteezy.com/system/resources/previews/018/861/138/non_2x/pastry-colored-marketplace-mobile-app-ui-mockup-template-vector.jpg" alt="Tripy Mobile App">
+            </div>
+        </div>
+    </div>
+    <div class="DivEnd">
+        <div class="touch">
+            <h5>STAY IN TOUCH</h5>
+            <h1>Ready to talk?</h1>
+            <p>Feel free to contact us</p>
+            <a href="#" class="button">LETS TALK</a>
+        </div>
+                <p class = "LastLign">&copy; 2022 All rights reserved. Free minimal bootstrap template by Designstub.</p>
+    </div>
+    
+
+</body>
+</html>
