@@ -48,12 +48,14 @@
             margin-bottom: 0px;          
         }
         .text p {
-            display: none;
             margin-left: 20px; 
-            margin-top: 0px;   
+            margin-top: 0px; 
+            opacity: 0;  
+            transition-duration: 0.5s;
         }
         .box:hover p {
             display: block;
+            opacity: 1;
         }
         .heder{
             color: rgb(132, 131, 131);
@@ -96,18 +98,20 @@
         .text2 h1 {
             font-size: 35px;
             margin-left: 25%;  
-            margin-bottom: 40%; 
             margin-top: -30%; 
             width: 100%;
         }
         .text2 p {
             font-size: 35px;
-            display: none;
             margin-left: 25%; 
-            margin-top: -40%;           
+            margin-top: -10px;
+            transition-duration: 0.5s;
+            opacity: 0;
         }
         .box2:hover p {
             display: block;
+            margin-top: 1-px;
+            opacity: 1;
         }
         .overlay{
             position: absolute;
