@@ -206,7 +206,7 @@ function isPrime(n) {
 function prime(e, f) {
     for (let i = e + 1; i < f; i++) {
         if (isPrime(i)) {
-                console.log(i, ' ');
+                console.log(i);
         }
     }
 }
