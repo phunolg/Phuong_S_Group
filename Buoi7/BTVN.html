@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>oop</title>
+</head>
+<body>
+<script>
+  // bài 1 
+  console.log('Bài 1')
+  let user = {}
+  user.name = 'David'
+  user.surname = 'Xuan'
+  user.name = 'Cafedev'
+  delete user.name
+
+  // bài 2
+  console.log('Bài 2')
+  function Check(obj) {
+    for (let key2 in obj) {
+      return false
+    }
+    return true
+  }
+
+  let schedule = {};
+  alert(Check(schedule));
+  schedule["8:30"] = "get up";
+  alert(Check(schedule));
+
+  // bài 3
+  console.log('Bài 3')
+  let salaries = {
+    John: 20,
+    Ann: 20,
+    Pete: 120
+  }
+
+  let sum = 0
+  for (let key3 in salaries) {
+    sum += salaries[key3]
+  }
+  if (sum === 0){
+    alert('Tổng tiền lương: 0')
+  }
+  console.log('Tổng tiền lương: '+sum)
+
+  // bài 4
+  console.log('Bài 4')
+  let menu = {
+    width: 200,
+    height: 300,
+    title: "My menu CafeDev"
+  };
+  
+  function multiplyNumeric() {
+    for (let nhan in menu){
+      if (typeof menu[nhan] == 'number'){
+        menu[nhan] *= 2
+      }
+    }
+  }
+
+  multiplyNumeric(menu)
+  console.log(menu)
+
+  // bài 5
+  console.log('Bài 5')
+  let calculator = {
+    a: 0,
+    b: 0,
+    c: 0,
+
+    read(){
+      this.a = +prompt('a: ', 0)
+      this.b = +prompt('b: ', 0)
+      this.c = +prompt('c: ', 0)
+    },
+
+    sum(){
+      return this.a + this.b + this.c
+    },
+
+    mul(){
+      return this.a * this.b * this.c
+    }
+  }
+
+  calculator.read()
+  console.log(calculator.sum())
+  console.log(calculator.mul())
+
+
+</script>
+</body>
+</html>
