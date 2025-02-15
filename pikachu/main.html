@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Pokemon API</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Pokemon API</h1>
+        <div class="search-box">
+            <input type="text" id = "search-input" placeholder="Search some Pokemon...">
+        </div>
+        <div id = "text" class = "text">
+            No pokemon matched with
+            <span class = "unfind" id = "unfind"></span>
+        </div>
+        <div id="search-result"></div>
+        <script src="main.js"></script>
+        <div class = "main-content">
+        </div>
+        <button class="btn" id="btn" onclick="loadMore()">Load More</button>
+    </div>
+</body>
+</html>
