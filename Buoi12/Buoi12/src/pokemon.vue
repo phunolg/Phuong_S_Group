@@ -1,0 +1,219 @@
+<script setup>
+const searchQuery = defineModel();
+const props = defineProps({
+  datas: {
+    type: Object,
+    required: true,
+  },
+});
+</script>
+
+<template>
+  <div class="container">
+    <input v-model="searchQuery" type="text" placeholder="Search some Pokemon..." class="search-box" />
+    <div v-if="datas.list.length === 0" class = "text">
+      No pokemon matched with: "{{ searchQuery }}".
+    </div>
+
+    <div class="main-content">
+      <div class="pokemon-box" v-for="pokemon in datas.list" :key="pokemon.id">
+        <div class="id">#{{ pokemon.id }}</div>
+        <div class="img">
+          <img :src="pokemon.img" :alt="pokemon.name" />
+        </div>
+        <div class="name">{{ pokemon.name }}</div>
+        <div class="features">
+          <span v-for="type in pokemon.types" :key="type" class="type" :class="type">
+            {{ type }}
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+
+<style scoped>
+.search-box {
+  margin: 60px 0 50px 0px;
+}
+
+input {
+  width: 300px;
+  padding: 20px 177px 20px 20px;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  font-size: 17px;
+  outline: none;
+  transition: box-shadow 0.3s ease-in-out;
+  box-shadow: #64646f33 0 7px 29px;
+  color: #282828a6;
+  text-align: left;
+}
+
+input:focus {
+  outline: 1px solid #000000;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 50px auto;
+}
+
+:global(body) {
+  font-family: Inter,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+  text-align: center;
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+.main-content {
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+
+@media (min-width: 768px) {
+  .pokemon-box {
+    width: 31.2%;
+  }
+}
+
+@media (min-width: 960px) {
+  .pokemon-box {
+    width: 21.22%;
+  }
+}
+@media (min-width: 1200px) {
+  .pokemon-box {
+    width: 14.66%;
+  }
+}
+.pokemon-box {
+  background-color: white;
+  border-radius: 15px;
+  padding: 10px 5px;
+  text-align: center;
+  box-shadow: 0px 4px 9px 6px rgba(0, 0, 0, 0.05);
+  margin: 5px 5px;
+  text-decoration: none;
+  color: inherit;
+  transition: box-shadow 0.3s ease-in-out;
+
+}
+
+.pokemon-box:hover {
+  box-shadow: 0px 4px 9px 6px rgba(0, 0, 0, 0.1);
+}
+
+.id {
+  font-size: 14px;
+}
+
+.img img {
+  width: 180px;
+  height: 180px;
+}
+
+.name {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 0;
+}
+
+.features {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  margin-top: 3px;
+}
+
+.type {
+  padding: 5px 5px;
+  border-radius: 5px;
+  font-size: 12px;
+  color: #000;
+  font-weight: 400;
+}
+
+.grass {
+  background-color: #78cd54;
+}
+
+.poison {
+  background-color: #a33ea1;
+}
+
+.fire {
+  background-color: #ff421c;
+}
+
+.flying {
+  background-color: #a98ff3;
+}
+
+.water {
+  background-color: #6390f0;
+}
+
+.bug {
+  background-color: #a6b91a;
+}
+
+.normal {
+  background-color: #a8a77a;
+}
+
+.electric {
+  background-color: #f7d02c;
+}
+
+.ground {
+  background-color: #e2bf65;
+}
+
+.fairy {
+  background-color: #f0b7bc;
+}
+
+.fighting {
+  background-color: #c22e28;
+}
+
+.btn {
+  cursor: pointer;
+  padding: 20px 25px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #ff4d4f;
+  transition: all .25s cubic-bezier(.02,.01,.47,1);
+  -webkit-transition: all .25s cubic-bezier(.02,.01,.47,1);
+  margin-top: 50px;
+}
+
+.type::first-letter {
+  text-transform: uppercase;
+}
+
+.name::first-letter {
+  text-transform: uppercase;
+}
+
+.unfind {
+  font-size: 24px;
+  color: #000;
+  font-weight:600;
+}
+
+.text {
+  color: #000;
+  font-size: 24px;
+  font-weight: 400;
+  width: 100%;
+  text-align: left;
+}
+</style>
