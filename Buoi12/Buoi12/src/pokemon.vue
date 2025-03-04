@@ -1,39 +1,68 @@
 <script setup>
+import { useRouter, useRoute } from 'vue-router';
 const searchQuery = defineModel();
 const props = defineProps({
   datas: {
     type: Object,
     required: true,
   },
+  loadMore: {
+    type: Function,
+    required: true,
+  },
 });
+
+const router = useRouter();
+const route = useRoute();
+const goToDetail = (id) => {
+  router.push(`/detail/${id}`);
+};
 </script>
 
 <template>
-  <div class="container">
-    <input v-model="searchQuery" type="text" placeholder="Search some Pokemon..." class="search-box" />
-    <div v-if="datas.list.length === 0" class = "text">
-      No pokemon matched with: "{{ searchQuery }}".
-    </div>
 
-    <div class="main-content">
-      <div class="pokemon-box" v-for="pokemon in datas.list" :key="pokemon.id">
-        <div class="id">#{{ pokemon.id }}</div>
-        <div class="img">
-          <img :src="pokemon.img" :alt="pokemon.name" />
+<div v-if="route.params.id">
+  <div>
+      <RouterLink to="/detail" class = "back">&lt; Back</RouterLink>
+    </div>
+    <main>
+      <RouterView />
+    </main>
+</div>
+
+
+<div v-if="!route.params.id">
+    <div class="container">
+      <input v-model="searchQuery" type="text" placeholder="Search some Pokemon..." class="search-box" />
+      <div v-if="datas.list.length === 0" class="text">
+        No pokemon matched with: "{{ searchQuery }}".
+      </div>
+      <div class="main-content">
+        <div class="pokemon-box" v-for="pokemon in datas.list" :key="pokemon.id" @click="goToDetail(pokemon.id)">
+          <div class="id">#{{ pokemon.id }}</div>
+          <div class="img">
+            <img :src="pokemon.img" :alt="pokemon.name" />
+          </div>
+          <div class="name">{{ pokemon.name }}</div>
+          <div class="features">
+            <span v-for="type in pokemon.types" :key="type" class="type" :class="type">
+              {{ type }}
+            </span>
+          </div>
         </div>
-        <div class="name">{{ pokemon.name }}</div>
-        <div class="features">
-          <span v-for="type in pokemon.types" :key="type" class="type" :class="type">
-            {{ type }}
-          </span>
-        </div>
+        <button v-if="datas.list.length > 0 && !searchQuery" class="btn" @click="loadMore">
+          Load more
+        </button>
       </div>
     </div>
-  </div>
+</div>
+
+
+
 </template>
 
 
-<style scoped>
+<style>
 .search-box {
   margin: 60px 0 50px 0px;
 }
@@ -193,6 +222,8 @@ input:focus {
   transition: all .25s cubic-bezier(.02,.01,.47,1);
   -webkit-transition: all .25s cubic-bezier(.02,.01,.47,1);
   margin-top: 50px;
+  position: relative;
+  left: 44%;
 }
 
 .type::first-letter {
@@ -215,5 +246,19 @@ input:focus {
   font-weight: 400;
   width: 100%;
   text-align: left;
+}
+
+.back {
+  display: block;
+  position: fixed;
+  top: 5%;
+  left: 5%;
+  border-radius: 30px;
+  padding: 8px 18px;
+  box-shadow: #63636333 0 4px 8px;
+  z-index: 999;
+  text-decoration: none;
+  color: #000;
+  transition: .4s;
 }
 </style>
